@@ -1,5 +1,5 @@
 // Countdown Timer
-const targetDate = new Date('2024-04-21T00:00:00').getTime();
+const targetDate = new Date('2025-04-21T00:00:00').getTime();
 
 function updateCountdown() {
   const now = new Date().getTime();
@@ -32,10 +32,10 @@ document.querySelector('.cyber-form').addEventListener('submit', function(e) {
   e.preventDefault();
   const email = this.querySelector('input').value;
   
-  if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+  if (/^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(email)) {
     alert('Thank you for subscribing! We\'ll keep you updated.');
     this.reset();
   } else {
-    alert('Please enter a valid email address.');
+    alert('Please enter a valid Solana address.');
   }
 });
