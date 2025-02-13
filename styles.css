@@ -19,7 +19,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.9); /* Darker overlay for better contrast */
+  background: rgba(0,0,0,0.7);
   z-index: 0;
 }
 
@@ -36,19 +36,21 @@ body::before {
   height: 100vh;
 }
 
-/* Neon Text Effect - Simplified */
+/* Neon Text Effect */
 .neon-text {
   font-family: 'Orbitron', sans-serif;
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 700;
-  color: #fff;
-  text-shadow: none;
+  color: #ffd700;
+  text-shadow: 
+    0 0 15px rgba(255,215,0,0.7),
+    0 0 25px rgba(255,215,0,0.5);
   margin: 2rem 0;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
-/* Cyber Countdown Timer - Adjusted */
+/* Cyber Countdown Timer */
 .cyber-countdown {
   display: flex;
   justify-content: center;
@@ -57,32 +59,32 @@ body::before {
 }
 
 .countdown-item {
-  background: transparent;
-  border: none;
-  padding: 0;
-  border-radius: 0;
-  width: auto;
-  backdrop-filter: none;
-  transition: none;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,215,0,0.3);
+  padding: 1.25rem;
+  border-radius: 8px;
+  width: 120px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
 }
 
 .countdown-item span {
   display: block;
   font-family: 'Orbitron', sans-serif;
-  font-size: 8rem; /* Larger size for a bold look */
-  color: #fff;
+  font-size: 2.5rem;
+  color: #ffd700;
   line-height: 1;
 }
 
 .countdown-item .label {
-  font-size: 1rem;
-  color: rgba(255,255,255,0.7);
+  font-size: 0.8rem;
+  color: rgba(255,215,0,0.7);
   margin-top: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 
-/* Cyber Form - Adjusted */
+/* Cyber Form */
 .cyber-form {
   max-width: 500px;
   margin: 2rem auto;
@@ -94,27 +96,27 @@ body::before {
   flex-grow: 1;
   max-width: 300px;
   padding: 1rem;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,215,0,0.3);
   border-radius: 4px;
-  color: #fff;
-  backdrop-filter: none;
+  color: #ffd700;
+  backdrop-filter: blur(10px);
   margin-right: 1rem;
-  transition: none;
+  transition: all 0.3s ease;
 }
 
 .cyber-form input:focus {
   outline: none;
-  border-color: #fff;
-  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+  border-color: #ffd700;
+  box-shadow: 0 0 10px rgba(255,215,0,0.3);
 }
 
 .glow-button {
   padding: 1rem 2rem;
-  background: #fff;
+  background: linear-gradient(90deg, #ffd700, #ffb700);
   border: none;
   border-radius: 4px;
-  color: #000;
+  color: #0a0a0e;
   font-family: 'Orbitron', sans-serif;
   font-weight: 700;
   cursor: pointer;
@@ -124,15 +126,15 @@ body::before {
 }
 
 .glow-button:hover {
-  background: #e6e6e6;
-  box-shadow: 0 0 15px rgba(255,255,255,0.5);
+  background: linear-gradient(90deg, #ffff00, #ffd700);
+  box-shadow: 0 0 15px rgba(255,215,0,0.5);
   transform: scale(1.05);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .neon-text {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .cyber-countdown {
@@ -140,8 +142,9 @@ body::before {
     gap: 1rem;
   }
 
-  .countdown-item span {
-    font-size: 4rem;
+  .countdown-item {
+    width: 80px;
+    padding: 1rem;
   }
 
   .cyber-form {
