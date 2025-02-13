@@ -1,166 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@300;500&display=swap');
+
 /* Base Styles */
 body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    color: #fff;
-    min-height: 100vh;
-    overflow-x: hidden;
-    background: url('assets/images/eye-logo.png') no-repeat center center fixed;
-    background-size: cover;
-    position: relative;
-  }
-  
-  body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    z-index: 0;
-  }
-  
-  .splash-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-  }
-  
-  /* Mechanical Eye Design */
-  .mechanical-eye {
-    position: relative;
-    max-width: 600px;
-    margin: 2rem auto;
-    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.3));
-    display: none; /* Hide since it's now the background */
-  }
-  
-  .eye-logo {
-    width: 100%;
-    height: auto;
-    animation: eye-pulse 3s ease-in-out infinite;
-  }
-  
-  @keyframes eye-pulse {
-    0%, 100% { transform: scale(0.98); opacity: 0.9; }
-    50% { transform: scale(1); opacity: 1; }
-  }
-  
-  /* Neon Text Effect */
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: url('assets/images/eye-logo.png') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 0;
+}
+
+.splash-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Mechanical Eye Design */
+.mechanical-eye {
+  position: relative;
+  max-width: 600px;
+  margin: 2rem auto;
+  filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.3));
+  display: none; /* Hide since it's now the background */
+}
+
+.eye-logo {
+  width: 100%;
+  height: auto;
+  animation: eye-pulse 3s ease-in-out infinite;
+}
+
+@keyframes eye-pulse {
+  0%, 100% { transform: scale(0.98); opacity: 0.9; }
+  50% { transform: scale(1); opacity: 1; }
+}
+
+/* Neon Text Effect */
+.neon-text {
+  font-family: 'Cinzel', serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #ffd700;
+  text-shadow: 
+    0 0 10px #ffd700,
+    0 0 20px #ffd70066,
+    0 0 40px #ffd70033;
+  margin: 2rem 0;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  animation: neon-flicker 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neon-flicker {
+  0% { opacity: 0.9; text-shadow: 0 0 5px #ffd700; }
+  100% { opacity: 1; text-shadow: 0 0 20px #ffd700; }
+}
+
+/* Cyber Countdown Timer */
+.cyber-countdown {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.countdown-item {
+  background: rgba(26, 26, 31, 0.7);
+  border: 1px solid #ffd70033;
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 120px;
+  position: relative;
+}
+
+.countdown-item::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ffd700, transparent 50%);
+  z-index: -1;
+  border-radius: 10px;
+}
+
+.countdown-item span {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 2.5rem;
+  color: #ffd700;
+}
+
+.countdown-item .label {
+  font-size: 1rem;
+  color: rgba(255,215,0,0.7);
+  margin-top: 0.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Cyber Form */
+.cyber-form {
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+.cyber-form input {
+  width: 70%;
+  padding: 1rem;
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid #ffd70033;
+  border-radius: 4px;
+  color: #ffd700;
+  font-family: 'Inter', sans-serif;
+  margin-right: 1rem;
+}
+
+.glow-button {
+  padding: 1rem 2rem;
+  background: linear-gradient(90deg, #ffd700, #ffb700);
+  border: none;
+  border-radius: 4px;
+  color: #0a0a0e;
+  font-family: 'Cinzel', serif;
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.glow-button:hover {
+  box-shadow: 0 0 15px #ffd70066;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .neon-text {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 3.5rem;
-    color: #ffd700;
-    text-shadow: 
-      0 0 5px #ffd700,
-      0 0 15px #ffd70066,
-      0 0 30px #ffd70033;
-    margin: 2rem 0;
-    letter-spacing: 2px;
-    animation: neon-flicker 1.5s ease-in-out infinite alternate;
-  }
-  
-  @keyframes neon-flicker {
-    0% { opacity: 0.9; text-shadow: 0 0 5px #ffd700; }
-    100% { opacity: 1; text-shadow: 0 0 20px #ffd700; }
-  }
-  
-  /* Cyber Countdown Timer */
-  .cyber-countdown {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin: 3rem 0;
-  }
-  
-  .countdown-item {
-    background: rgba(26, 26, 31, 0.7);
-    border: 1px solid #ffd70033;
-    padding: 1.5rem;
-    border-radius: 8px;
-    width: 120px;
-    position: relative;
-  }
-  
-  .countdown-item::after {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, #ffd700, transparent 50%);
-    z-index: -1;
-    border-radius: 10px;
-  }
-  
-  .countdown-item span {
-    display: block;
-    font-family: 'Orbitron', sans-serif;
     font-size: 2.5rem;
-    color: #ffd700;
   }
-  
-  .countdown-item .label {
-    font-size: 1rem;
-    color: rgba(255,215,0,0.7);
-    margin-top: 0.5rem;
+
+  .cyber-countdown {
+    flex-wrap: wrap;
+    gap: 1rem;
   }
-  
-  /* Cyber Form */
-  .cyber-form {
-    max-width: 500px;
-    margin: 2rem auto;
-  }
-  
-  .cyber-form input {
-    width: 70%;
+
+  .countdown-item {
+    width: 100px;
     padding: 1rem;
-    background: rgba(255, 215, 0, 0.1);
-    border: 1px solid #ffd70033;
-    border-radius: 4px;
-    color: #ffd700;
-    font-family: 'Orbitron', sans-serif;
-    margin-right: 1rem;
   }
-  
-  .glow-button {
-    padding: 1rem 2rem;
-    background: linear-gradient(90deg, #ffd700, #ffb700);
-    border: none;
-    border-radius: 4px;
-    color: #0a0a0e;
-    font-family: 'Orbitron', sans-serif;
-    cursor: pointer;
-    transition: 0.3s;
+
+  .cyber-form input {
+    width: 100%;
+    margin: 0 0 1rem 0;
   }
-  
-  .glow-button:hover {
-    box-shadow: 0 0 15px #ffd70066;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .neon-text {
-      font-size: 2.5rem;
-    }
-  
-    .cyber-countdown {
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-  
-    .countdown-item {
-      width: 100px;
-      padding: 1rem;
-    }
-  
-    .cyber-form input {
-      width: 100%;
-      margin: 0 0 1rem 0;
-    }
-  }
+}
