@@ -1,132 +1,150 @@
-body, html {
+/* Base Styles */
+body {
     margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'Arial', sans-serif;
-    background-color: black;
-    color: white;
-    overflow: hidden;
-}
-
-.background {
-    position: fixed;
-    top: 0;
-    left: 0;
+    background: #0a0a0e;
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  .splash-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  /* Mechanical Eye Design */
+  .mechanical-eye {
+    position: relative;
+    max-width: 600px;
+    margin: 2rem auto;
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.3));
+  }
+  
+  .eye-logo {
     width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(20,20,20,1) 100%);
+    height: auto;
+    animation: eye-pulse 3s ease-in-out infinite;
+  }
+  
+  @keyframes eye-pulse {
+    0%, 100% { transform: scale(0.98); opacity: 0.9; }
+    50% { transform: scale(1); opacity: 1; }
+  }
+  
+  /* Neon Text Effect */
+  .neon-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    color: #ffd700;
+    text-shadow: 
+      0 0 5px #ffd700,
+      0 0 15px #ffd70066,
+      0 0 30px #ffd70033;
+    margin: 2rem 0;
+    letter-spacing: 2px;
+    animation: neon-flicker 1.5s ease-in-out infinite alternate;
+  }
+  
+  @keyframes neon-flicker {
+    0% { opacity: 0.9; text-shadow: 0 0 5px #ffd700; }
+    100% { opacity: 1; text-shadow: 0 0 20px #ffd700; }
+  }
+  
+  /* Cyber Countdown Timer */
+  .cyber-countdown {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-}
-
-.eye-container {
+    gap: 2rem;
+    margin: 3rem 0;
+  }
+  
+  .countdown-item {
+    background: linear-gradient(145deg, #1a1a1f 0%, #0a0a0e 100%);
+    border: 1px solid #ffd70033;
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 120px;
     position: relative;
-    width: 80%;
-    max-width: 800px;
-    margin-bottom: 30px;
-}
-
-.eye-illustration {
-    width: 100%;
-    position: relative;
-}
-
-.coming-soon-text {
+  }
+  
+  .countdown-item::after {
+    content: '';
     position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 4vw;
-    font-weight: bold;
-    color: #ffd700;
-    text-shadow: 0 0 15px rgba(255,215,0,0.7), 0 0 25px rgba(255,215,0,0.4);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    z-index: 10;
-}
-
-.countdown-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-}
-
-.countdown {
-    display: flex;
-    gap: 20px;
-}
-
-.countdown-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: rgba(255,255,255,0.1);
-    padding: 15px;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ffd700, transparent 50%);
+    z-index: -1;
     border-radius: 10px;
-    min-width: 100px;
-    border: 1px solid rgba(255,215,0,0.2);
-}
-
-.countdown-item span:first-child {
-    font-size: 2rem;
-    font-weight: bold;
+  }
+  
+  .countdown-item span {
+    display: block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
     color: #ffd700;
-}
-
-.countdown-item .label {
-    color: rgba(255,255,255,0.7);
-    margin-top: 5px;
-}
-
-.subscribe-form {
-    display: flex;
-    gap: 10px;
-    width: 100%;
+  }
+  
+  .countdown-item .label {
+    font-size: 1rem;
+    color: rgba(255,215,0,0.7);
+    margin-top: 0.5rem;
+  }
+  
+  /* Cyber Form */
+  .cyber-form {
     max-width: 500px;
-    justify-content: center;
-}
-
-.subscribe-form input {
-    flex-grow: 1;
-    padding: 10px;
-    background: rgba(0,0,0,0.7);
-    border: 1px solid rgba(255,215,0,0.3);
-    color: white;
-    outline: none;
-}
-
-.subscribe-form button {
-    padding: 10px 20px;
-    background-color: #ffd700;
-    color: black;
+    margin: 2rem auto;
+  }
+  
+  .cyber-form input {
+    width: 70%;
+    padding: 1rem;
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid #ffd70033;
+    border-radius: 4px;
+    color: #ffd700;
+    font-family: 'Orbitron', sans-serif;
+    margin-right: 1rem;
+  }
+  
+  .glow-button {
+    padding: 1rem 2rem;
+    background: linear-gradient(90deg, #ffd700, #ffb700);
     border: none;
+    border-radius: 4px;
+    color: #0a0a0e;
+    font-family: 'Orbitron', sans-serif;
     cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.subscribe-form button:hover {
-    background-color: #ffcc00;
-    box-shadow: 0 0 10px rgba(255,215,0,0.5);
-}
-
-@media (max-width: 768px) {
-    .coming-soon-text {
-        font-size: 8vw;
+    transition: 0.3s;
+  }
+  
+  .glow-button:hover {
+    box-shadow: 0 0 15px #ffd70066;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .neon-text {
+      font-size: 2.5rem;
     }
-
-    .countdown {
-        gap: 10px;
+  
+    .cyber-countdown {
+      flex-wrap: wrap;
+      gap: 1rem;
     }
-
+  
     .countdown-item {
-        min-width: 70px;
-        padding: 10px;
+      width: 100px;
+      padding: 1rem;
     }
-
-    .subscribe-form {
-        flex-direction: column;
-        width: 90%;
+  
+    .cyber-form input {
+      width: 100%;
+      margin: 0 0 1rem 0;
     }
-}
+  }
