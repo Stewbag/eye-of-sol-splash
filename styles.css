@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Inter:wght@300;500&display=swap');
 
 /* Base Styles */
 body {
@@ -32,45 +32,36 @@ body::before {
   z-index: 1;
 }
 
-/* Mechanical Eye Design */
-.mechanical-eye {
-  position: relative;
-  max-width: 600px;
-  margin: 2rem auto;
-  filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.3));
-  display: none; /* Hide since it's now the background */
-}
-
-.eye-logo {
-  width: 100%;
-  height: auto;
-  animation: eye-pulse 3s ease-in-out infinite;
-}
-
-@keyframes eye-pulse {
-  0%, 100% { transform: scale(0.98); opacity: 0.9; }
-  50% { transform: scale(1); opacity: 1; }
-}
-
 /* Neon Text Effect */
 .neon-text {
-  font-family: 'Cinzel', serif;
+  font-family: 'Cinzel Decorative', cursive;
   font-size: 4rem;
   font-weight: 700;
   color: #ffd700;
   text-shadow: 
-    0 0 10px #ffd700,
-    0 0 20px #ffd70066,
-    0 0 40px #ffd70033;
+    0 0 15px rgba(255,215,0,0.7),
+    0 0 25px rgba(255,215,0,0.5),
+    0 0 35px rgba(255,215,0,0.3);
   margin: 2rem 0;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  animation: neon-flicker 1.5s ease-in-out infinite alternate;
+  position: relative;
+  animation: subtle-glow 3s ease-in-out infinite alternate;
 }
 
-@keyframes neon-flicker {
-  0% { opacity: 0.9; text-shadow: 0 0 5px #ffd700; }
-  100% { opacity: 1; text-shadow: 0 0 20px #ffd700; }
+@keyframes subtle-glow {
+  0% { 
+    text-shadow: 
+      0 0 10px rgba(255,215,0,0.5),
+      0 0 20px rgba(255,215,0,0.3);
+    opacity: 0.9;
+  }
+  100% { 
+    text-shadow: 
+      0 0 20px rgba(255,215,0,0.7),
+      0 0 30px rgba(255,215,0,0.5);
+    opacity: 1;
+  }
 }
 
 /* Cyber Countdown Timer */
@@ -83,28 +74,22 @@ body::before {
 
 .countdown-item {
   background: rgba(26, 26, 31, 0.7);
-  border: 1px solid #ffd70033;
+  border: 1px solid rgba(255,215,0,0.2);
   padding: 1.5rem;
   border-radius: 8px;
   width: 120px;
   position: relative;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
 }
 
-.countdown-item::after {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, #ffd700, transparent 50%);
-  z-index: -1;
-  border-radius: 10px;
+.countdown-item:hover {
+  transform: scale(1.05);
 }
 
 .countdown-item span {
   display: block;
-  font-family: 'Cinzel', serif;
+  font-family: 'Cinzel Decorative', cursive;
   font-size: 2.5rem;
   color: #ffd700;
 }
@@ -114,6 +99,7 @@ body::before {
   color: rgba(255,215,0,0.7);
   margin-top: 0.5rem;
   font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
 }
 
 /* Cyber Form */
@@ -139,7 +125,7 @@ body::before {
   border: none;
   border-radius: 4px;
   color: #0a0a0e;
-  font-family: 'Cinzel', serif;
+  font-family: 'Cinzel Decorative', cursive;
   cursor: pointer;
   transition: 0.3s;
   text-transform: uppercase;
