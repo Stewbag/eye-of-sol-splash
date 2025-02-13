@@ -27,17 +27,6 @@ updateCountdown();
 // Update every second
 const countdownInterval = setInterval(updateCountdown, 1000);
 
-// Mechanical Eye Hover Effect
-const eye = document.querySelector('.mechanical-eye');
-
-eye.addEventListener('mouseenter', () => {
-  eye.style.filter = 'drop-shadow(0 0 25px rgba(255, 215, 0, 0.5))';
-});
-
-eye.addEventListener('mouseleave', () => {
-  eye.style.filter = 'drop-shadow(0 0 15px rgba(255, 215, 0, 0.3))';
-});
-
 // Email Form Handling
 document.querySelector('.cyber-form').addEventListener('submit', function(e) {
   e.preventDefault();
